@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Trivia!</title>
+    <script>
+      function trivia1(button) {
+        var buttons = document.getElementsByClassName('button-options');
+        var feedback = document.getElementById('feedback-trivia1');
+        if (button.id === 'option2') {
+          button.style.backgroundColor = 'green';
+          feedback.innerHTML = 'Correct!';
+        } else {
+          button.style.backgroundColor = 'red';
+          feedback.innerHTML = 'Incorrect';
+        }
+      }
+      function trivia2() {
+        var answer = document.getElementById('free-answer').value.toLowerCase();
+        var feedback = document.getElementById('feedback-trivia2');
+        if (answer === 'henrique') {
+          feedback.innerHTML = 'Correct';
+          feedback.style.color = 'green';
+        } else {
+          feedback.innerHTML = 'Incorrect';
+          feedback.style.color = 'red';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice</h2>
+        <hr />
+        <h3>On which continent is Brazil located?</h3>
+        <button class="button-options" id="option1" onclick="trivia1(this)">
+          <strong>Europe</strong>
+        </button>
+        <button class="button-options" id="option2" onclick="trivia1(this)">
+          <strong>America</strong>
+        </button>
+        <button class="button-options" id="option3" onclick="trivia1(this)">
+          <strong>Africa</strong>
+        </button>
+        <button class="button-options" id="option4" onclick="trivia1(this)">
+          <strong>Oceania</strong>
+        </button>
+        <div id="feedback-trivia1"></div>
+      </div>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr />
+        <h3>What is the name of the developer?</h3>
+        <input type="text" id="free-answer" />
+        <button onclick="trivia2()">Check</button>
+        <div id="feedback-trivia2"></div>
+      </div>
+    </div>
+  </body>
+</html>
